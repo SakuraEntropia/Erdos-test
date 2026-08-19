@@ -43,6 +43,10 @@ the hardest remaining classes are the six residue classes `n ≡ 1, 121, 169, 28
   collapse to one: `a ∣ d + M` alone forces `a ∣ M²/d + M` (`Theorems/NewStructures.lean`,
   `one_sided_certificate` / `certificate_iff_one_sided`). This unifies the `a = 3`, `a = 7`, … strata,
   and `gcd(M, a) = 1` is automatic for prime `a = q` when `n = p` is prime.
+- **Partial theorems** (`Theorems/Phase11.lean`) — if `n` has a prime factor `≡ 3 (mod 4)` then `n`
+  is solvable (so any counterexample has *all* prime factors `≡ 1 (mod 4)`); infinitely many `n` are
+  solvable; and `d ∣ M²` iff every prime exponent of `d` is ≤ twice the exponent in `M`
+  (the "bounded-exponent box" behind the divisor parametrisation).
 
 ## Register discipline
 
@@ -61,6 +65,7 @@ ErdosTest/
     MinimalCertificate.lean, A3Characterization.lean, PrimeModThree.lean  # a = 3 theory
     Classical.lean, DivisorParam.lean, MinimalCertParam.lean, ACases.lean
     NewStructures.lean     # Phase 9: a-strata, divisor-residue set, one-sided criterion
+    Phase11.lean           # Phase 11: partial theorems + divisor-exponent box
   Notes/             # research log (bottleneck, literature, tournament, stress test, …)
   Experiments/       # register-B Python computations
 ```
