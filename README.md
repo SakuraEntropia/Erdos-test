@@ -21,8 +21,8 @@ For every integer `n ≥ 2`, the equation
 ```
 
 has a solution in positive integers `x, y, z`. It suffices to prove it for primes `p ≡ 1 (mod 4)`;
-the hardest remaining classes are the six residue classes `n ≡ 1, 121, 169, 289, 361, 529 (mod 840)`
-(Mordell's reduction).
+in fact (Phase 12) for primes `p ≡ 1 (mod 24)`. The hardest remaining classes are the six residue
+classes `n ≡ 1, 121, 169, 289, 361, 529 (mod 840)` (Mordell's reduction).
 
 ## What is verified (register **A** — machine-checked, zero `sorry`)
 
@@ -47,6 +47,12 @@ the hardest remaining classes are the six residue classes `n ≡ 1, 121, 169, 28
   is solvable (so any counterexample has *all* prime factors `≡ 1 (mod 4)`); infinitely many `n` are
   solvable; and `d ∣ M²` iff every prime exponent of `d` is ≤ twice the exponent in `M`
   (the "bounded-exponent box" behind the divisor parametrisation).
+- **Mordell reduction, first three steps** (`Theorems/Phase12.lean`) — the conjecture is equivalent
+  to its restriction to primes `p ≡ 1 (mod 4)`, then to `p ≡ 1 (mod 12)`, then to `p ≡ 1 (mod 24)`
+  (`reduction_to_primes_one_mod_four` / `_twelve` / `_twenty_four`). The mod-12 and mod-24 steps are
+  genuine strengthenings: primes `p ≡ 5 (mod 12)` are covered by the `a = 3` stratum, and
+  `n ≡ 5 (mod 8)` is always solvable via Mordell's identity (`solvable_of_five_mod_eight`). This
+  pins the open core down to `p ≡ 1 (mod 24)`; the six hard classes `mod 840` are the remaining step.
 
 ## Register discipline
 
@@ -66,6 +72,7 @@ ErdosTest/
     Classical.lean, DivisorParam.lean, MinimalCertParam.lean, ACases.lean
     NewStructures.lean     # Phase 9: a-strata, divisor-residue set, one-sided criterion
     Phase11.lean           # Phase 11: partial theorems + divisor-exponent box
+    Phase12.lean           # Phase 12: Mordell reduction mod 4 / 12 / 24
   Notes/             # research log (bottleneck, literature, tournament, stress test, …)
   Experiments/       # register-B Python computations
 ```

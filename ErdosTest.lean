@@ -17,3 +17,4 @@ import ErdosTest.Theorems.PrimeModThree
 import ErdosTest.Theorems.A3Characterization
 import ErdosTest.Theorems.NewStructures
 import ErdosTest.Theorems.Phase11
+import ErdosTest.Theorems.Phase12
